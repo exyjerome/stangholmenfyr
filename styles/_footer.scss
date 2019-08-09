@@ -1,0 +1,17 @@
+.footer {
+    @extend .row;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    padding: 2em 6em;
+    margin: 0;
+    .footer__content {
+        @extend .col-md-12;
+
+        p, a {
+            color: #333 !important;
+        }
+
+        a {
+            text-decoration: underline;
+        }
+    }
+}

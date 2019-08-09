@@ -1,0 +1,137 @@
+@import 'bootstrap';
+@import 'animate';
+
+.main {
+    display: flex;
+    // width: 100vw;
+    height: 100vh;
+
+    flex-direction: column;
+
+    background: url(/static/island_aerial.jpg) no-repeat center center fixed;
+    background-size: cover;
+
+    font-family: 'GFS Didot', serif;
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .main__title {
+        font-size: 3em;
+        color: inherit;
+        padding: .25em;
+        flex: 1;
+        align-items: center;
+        display: flex;
+    }
+
+    .main__social {
+        display: flex;
+        // padding: 1em;
+        @include md {
+            display: none;
+        }
+    }
+
+    .fas {
+        color: black;
+    }
+
+    .main__social-item {
+        min-width: 3em;
+        min-height: 3em;
+        align-items: center;
+        display: inline-flex;
+        justify-content: center;
+    }
+
+    .main__nav {
+        display: flex;
+        align-items: flex-end;
+        width: 100%;
+        justify-content: center;
+        background: white;
+        color: black;
+        position: sticky;
+        top: 0;
+
+        &.is-active {
+            @include md {
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                flex-direction: column;
+                text-align: -webkit-center;
+            }
+        }
+        @include md {
+           &:not(.is-active) .main__nav-item {
+                display: none;
+            }
+        }
+    }
+
+    .nav-toggle {
+        display: none;
+
+        @include md {
+            display: block;
+            padding: 1em;
+        }
+        @include md {
+            .is-active {
+                display: block;
+                z-index: 9999;
+                position: absolute;
+                top: 2em;
+                transform: translateX(-50%);
+                left: 50%;
+                color: black;
+                font-size: 2em;
+            }
+        }
+    }
+
+    .main__nav .main__nav-item {
+        font-size: 1em;
+        text-decoration: unset;
+
+        color: inherit;
+
+        padding: 2em;
+        position: relative;
+
+        text-align: center;
+        font-family: 'GFS Didot', serif;
+        transition: all ease-in-out 300ms;
+
+        &:after {
+            background: none repeat scroll 0 0 transparent;
+            bottom: 0;
+            content: "";
+            display: block;
+            height: 2px;
+            left: 50%;
+            top: 75%;
+            transform: translateX(-50%);
+            position: absolute;
+            background: #000;
+            transition: width 0.3s ease 0s, left 0.3s ease 0s;
+            width: 0;
+        }
+
+        &:hover:after {
+            width: 50%;
+        }
+    }
+}
+
+*:not(.fas) {
+    font-family: 'GFS Didot', serif !important;
+}
