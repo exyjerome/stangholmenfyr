@@ -3169,7 +3169,7 @@ var __importStar = void 0 && (void 0).__importStar || function (mod) {
   return result;
 };
 
-(0, _defineProperty["default"])(exports, "__esModule", {
+(0, _defineProperty.default)(exports, "__esModule", {
   value: true
 });
 
@@ -3199,7 +3199,7 @@ var __importDefault = void 0 && (void 0).__importDefault || function (mod) {
   };
 };
 
-(0, _defineProperty["default"])(exports, "__esModule", {
+(0, _defineProperty.default)(exports, "__esModule", {
   value: true
 });
 
@@ -3222,7 +3222,7 @@ function isInAmpMode() {
 exports.isInAmpMode = isInAmpMode;
 
 function useAmp() {
-  var ampState = react_1["default"].useContext(amp_context_1.AmpStateContext); // un-comment below to not be considered AMP in dirty mode
+  var ampState = react_1.default.useContext(amp_context_1.AmpStateContext); // un-comment below to not be considered AMP in dirty mode
 
   return isInAmpMode(ampState); // && ampMode.hasQuery
 }
@@ -3255,7 +3255,7 @@ var __importStar = void 0 && (void 0).__importStar || function (mod) {
   return result;
 };
 
-(0, _defineProperty["default"])(exports, "__esModule", {
+(0, _defineProperty.default)(exports, "__esModule", {
   value: true
 });
 
@@ -3287,7 +3287,7 @@ var __importDefault = void 0 && (void 0).__importDefault || function (mod) {
   };
 };
 
-(0, _defineProperty["default"])(exports, "__esModule", {
+(0, _defineProperty.default)(exports, "__esModule", {
   value: true
 });
 
@@ -3304,14 +3304,14 @@ var amp_1 = __webpack_require__(/*! ./amp */ "./node_modules/next-server/dist/li
 function defaultHead() {
   var className = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'next-head';
   var inAmpMode = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
-  var head = [react_1["default"].createElement("meta", {
+  var head = [react_1.default.createElement("meta", {
     key: "charSet",
     charSet: "utf-8",
     className: className
   })];
 
   if (!inAmpMode) {
-    head.push(react_1["default"].createElement("meta", {
+    head.push(react_1.default.createElement("meta", {
       key: "viewport",
       name: "viewport",
       content: "width=device-width,minimum-scale=1,initial-scale=1",
@@ -3331,8 +3331,8 @@ function onlyReactElement(list, child) {
   } // Adds support for React.Fragment
 
 
-  if (child.type === react_1["default"].Fragment) {
-    return list.concat(react_1["default"].Children.toArray(child.props.children).reduce(function (fragmentList, fragmentChild) {
+  if (child.type === react_1.default.Fragment) {
+    return list.concat(react_1.default.Children.toArray(child.props.children).reduce(function (fragmentList, fragmentChild) {
       if (typeof fragmentChild === 'string' || typeof fragmentChild === 'number') {
         return fragmentList;
       }
@@ -3352,9 +3352,9 @@ var METATYPES = ['name', 'httpEquiv', 'charSet', 'itemProp'];
 */
 
 function unique() {
-  var keys = new _set["default"]();
-  var tags = new _set["default"]();
-  var metaTypes = new _set["default"]();
+  var keys = new _set.default();
+  var tags = new _set.default();
+  var metaTypes = new _set.default();
   var metaCategories = {};
   return function (h) {
     if (h.key && typeof h.key !== 'number' && h.key.indexOf('.$') === 0) {
@@ -3380,7 +3380,7 @@ function unique() {
             metaTypes.add(metatype);
           } else {
             var category = h.props[metatype];
-            var categories = metaCategories[metatype] || new _set["default"]();
+            var categories = metaCategories[metatype] || new _set.default();
             if (categories.has(category)) return false;
             categories.add(category);
             metaCategories[metatype] = categories;
@@ -3401,7 +3401,7 @@ function unique() {
 
 function reduceComponents(headElements, props) {
   return headElements.reduce(function (list, headElement) {
-    var headElementChildren = react_1["default"].Children.toArray(headElement.props.children);
+    var headElementChildren = react_1.default.Children.toArray(headElement.props.children);
     return list.concat(headElementChildren);
   }, []).reduce(onlyReactElement, []).reverse().concat(defaultHead('', props.inAmpMode)).filter(unique()).reverse().map(function (c, i) {
     var className = (c.props && c.props.className ? c.props.className + ' ' : '') + 'next-head';
@@ -3411,14 +3411,14 @@ function reduceComponents(headElements, props) {
     }
 
     var key = c.key || i;
-    return react_1["default"].cloneElement(c, {
+    return react_1.default.cloneElement(c, {
       key: key,
       className: className
     });
   });
 }
 
-var Effect = side_effect_1["default"]();
+var Effect = side_effect_1.default();
 /**
  * This component injects elements to `<head>` of your page.
  * To avoid duplicated `tags` in `<head>` you can use the `key` property, which will make sure every tag is only rendered once.
@@ -3426,9 +3426,9 @@ var Effect = side_effect_1["default"]();
 
 function Head(_ref) {
   var children = _ref.children;
-  return react_1["default"].createElement(amp_context_1.AmpStateContext.Consumer, null, function (ampState) {
-    return react_1["default"].createElement(head_manager_context_1.HeadManagerContext.Consumer, null, function (updateHead) {
-      return react_1["default"].createElement(Effect, {
+  return react_1.default.createElement(amp_context_1.AmpStateContext.Consumer, null, function (ampState) {
+    return react_1.default.createElement(head_manager_context_1.HeadManagerContext.Consumer, null, function (updateHead) {
+      return react_1.default.createElement(Effect, {
         reduceComponentsToState: reduceComponents,
         handleStateChange: updateHead,
         inAmpMode: amp_1.isInAmpMode(ampState)
@@ -3438,7 +3438,7 @@ function Head(_ref) {
 }
 
 Head.rewind = Effect.rewind;
-exports["default"] = Head;
+exports.default = Head;
 
 /***/ }),
 
@@ -3472,7 +3472,7 @@ var _set = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2
 
 var _defineProperty = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js"));
 
-(0, _defineProperty["default"])(exports, "__esModule", {
+(0, _defineProperty.default)(exports, "__esModule", {
   value: true
 });
 
@@ -3480,12 +3480,12 @@ var react_1 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 var isServer = "object" === 'undefined';
 
-exports["default"] = function () {
-  var mountedInstances = new _set["default"]();
+exports.default = function () {
+  var mountedInstances = new _set.default();
   var state;
 
   function emitChange(component) {
-    state = component.props.reduceComponentsToState((0, _toConsumableArray2["default"])(mountedInstances), component.props);
+    state = component.props.reduceComponentsToState((0, _toConsumableArray2.default)(mountedInstances), component.props);
 
     if (component.props.handleStateChange) {
       component.props.handleStateChange(state);
@@ -3495,8 +3495,8 @@ exports["default"] = function () {
   return (
     /*#__PURE__*/
     function (_react_1$Component) {
-      (0, _inherits2["default"])(_class, _react_1$Component);
-      (0, _createClass2["default"])(_class, null, [{
+      (0, _inherits2.default)(_class, _react_1$Component);
+      (0, _createClass2.default)(_class, null, [{
         key: "rewind",
         // Used when server rendering
         value: function rewind() {
@@ -3510,18 +3510,18 @@ exports["default"] = function () {
       function _class(props) {
         var _this;
 
-        (0, _classCallCheck2["default"])(this, _class);
-        _this = (0, _possibleConstructorReturn2["default"])(this, (0, _getPrototypeOf2["default"])(_class).call(this, props));
+        (0, _classCallCheck2.default)(this, _class);
+        _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(_class).call(this, props));
 
         if (isServer) {
-          mountedInstances.add((0, _assertThisInitialized2["default"])(_this));
-          emitChange((0, _assertThisInitialized2["default"])(_this));
+          mountedInstances.add((0, _assertThisInitialized2.default)(_this));
+          emitChange((0, _assertThisInitialized2.default)(_this));
         }
 
         return _this;
       }
 
-      (0, _createClass2["default"])(_class, [{
+      (0, _createClass2.default)(_class, [{
         key: "componentDidMount",
         value: function componentDidMount() {
           mountedInstances.add(this);
@@ -3535,7 +3535,7 @@ exports["default"] = function () {
       }, {
         key: "componentWillUnmount",
         value: function componentWillUnmount() {
-          mountedInstances["delete"](this);
+          mountedInstances.delete(this);
           emitChange(this);
         }
       }, {
@@ -3611,7 +3611,7 @@ var _inherits2 = _interopRequireDefault2(__webpack_require__(/*! @babel/runtime-
 var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "./node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
 
 exports.__esModule = true;
-exports["default"] = void 0;
+exports.default = void 0;
 
 var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
@@ -3630,29 +3630,29 @@ var statusCodes = {
 var Error =
 /*#__PURE__*/
 function (_react$default$Compon) {
-  (0, _inherits2["default"])(Error, _react$default$Compon);
+  (0, _inherits2.default)(Error, _react$default$Compon);
 
   function Error() {
-    (0, _classCallCheck2["default"])(this, Error);
-    return (0, _possibleConstructorReturn2["default"])(this, (0, _getPrototypeOf2["default"])(Error).apply(this, arguments));
+    (0, _classCallCheck2.default)(this, Error);
+    return (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(Error).apply(this, arguments));
   }
 
-  (0, _createClass2["default"])(Error, [{
+  (0, _createClass2.default)(Error, [{
     key: "render",
     value: function render() {
       var statusCode = this.props.statusCode;
       var title = this.props.title || statusCodes[statusCode] || 'An unexpected error has occurred';
-      return _react["default"].createElement("div", {
+      return _react.default.createElement("div", {
         style: styles.error
-      }, _react["default"].createElement(_head["default"], null, _react["default"].createElement("title", null, statusCode, ": ", title)), _react["default"].createElement("div", null, _react["default"].createElement("style", {
+      }, _react.default.createElement(_head.default, null, _react.default.createElement("title", null, statusCode, ": ", title)), _react.default.createElement("div", null, _react.default.createElement("style", {
         dangerouslySetInnerHTML: {
           __html: 'body { margin: 0 }'
         }
-      }), statusCode ? _react["default"].createElement("h1", {
+      }), statusCode ? _react.default.createElement("h1", {
         style: styles.h1
-      }, statusCode) : null, _react["default"].createElement("div", {
+      }, statusCode) : null, _react.default.createElement("div", {
         style: styles.desc
-      }, _react["default"].createElement("h2", {
+      }, _react.default.createElement("h2", {
         style: styles.h2
       }, title, "."))));
     }
@@ -3668,9 +3668,9 @@ function (_react$default$Compon) {
     }
   }]);
   return Error;
-}(_react["default"].Component);
+}(_react.default.Component);
 
-exports["default"] = Error;
+exports.default = Error;
 Error.displayName = 'ErrorPage';
 var styles = {
   error: {

@@ -650,7 +650,7 @@ var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/help
 
 exports.__esModule = true;
 exports.middleware = middleware;
-exports.NextScript = exports.Main = exports.Head = exports.Html = exports["default"] = void 0;
+exports.NextScript = exports.Main = exports.Head = exports.Html = exports.default = void 0;
 
 var _stringify = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/json/stringify */ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js"));
 
@@ -691,11 +691,11 @@ function middleware(_x) {
 }
 
 function _middleware() {
-  _middleware = (0, _asyncToGenerator2["default"])(
+  _middleware = (0, _asyncToGenerator2.default)(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee(_ref) {
+  _regenerator.default.mark(function _callee(_ref) {
     var req, res;
-    return _regenerator["default"].wrap(function _callee$(_context) {
+    return _regenerator.default.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
@@ -712,14 +712,14 @@ function _middleware() {
 }
 
 function dedupe(bundles) {
-  var files = new _set["default"]();
+  var files = new _set.default();
   var kept = [];
   var _iteratorNormalCompletion = true;
   var _didIteratorError = false;
   var _iteratorError = undefined;
 
   try {
-    for (var _iterator = (0, _getIterator2["default"])(bundles), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+    for (var _iterator = (0, _getIterator2.default)(bundles), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
       var bundle = _step.value;
       if (files.has(bundle.file)) continue;
       files.add(bundle.file);
@@ -730,8 +730,8 @@ function dedupe(bundles) {
     _iteratorError = err;
   } finally {
     try {
-      if (!_iteratorNormalCompletion && _iterator["return"] != null) {
-        _iterator["return"]();
+      if (!_iteratorNormalCompletion && _iterator.return != null) {
+        _iterator.return();
       }
     } finally {
       if (_didIteratorError) {
@@ -751,18 +751,18 @@ function dedupe(bundles) {
 var Document =
 /*#__PURE__*/
 function (_react$Component) {
-  (0, _inherits2["default"])(Document, _react$Component);
+  (0, _inherits2.default)(Document, _react$Component);
 
   function Document() {
     var _this;
 
-    (0, _classCallCheck2["default"])(this, Document);
-    _this = (0, _possibleConstructorReturn2["default"])(this, (0, _getPrototypeOf2["default"])(Document).apply(this, arguments));
+    (0, _classCallCheck2.default)(this, Document);
+    _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(Document).apply(this, arguments));
     _this.context = void 0;
     return _this;
   }
 
-  (0, _createClass2["default"])(Document, [{
+  (0, _createClass2.default)(Document, [{
     key: "getChildContext",
     value: function getChildContext() {
       return {
@@ -770,23 +770,23 @@ function (_react$Component) {
         // In dev we invalidate the cache by appending a timestamp to the resource URL.
         // This is a workaround to fix https://github.com/zeit/next.js/issues/5860
         // TODO: remove this workaround when https://bugs.webkit.org/show_bug.cgi?id=187726 is fixed.
-        _devOnlyInvalidateCacheQueryString:  true ? '?ts=' + (0, _now["default"])() : undefined
+        _devOnlyInvalidateCacheQueryString:  true ? '?ts=' + (0, _now.default)() : undefined
       };
     }
   }, {
     key: "render",
     value: function render() {
-      return _react["default"].createElement(Html, null, _react["default"].createElement(Head, null), _react["default"].createElement("body", null, _react["default"].createElement(Main, null), _react["default"].createElement(NextScript, null)));
+      return _react.default.createElement(Html, null, _react.default.createElement(Head, null), _react.default.createElement("body", null, _react.default.createElement(Main, null), _react.default.createElement(NextScript, null)));
     }
   }], [{
     key: "getInitialProps",
     value: function getInitialProps(_ref2) {
-      return (0, _asyncToGenerator2["default"])(
+      return (0, _asyncToGenerator2.default)(
       /*#__PURE__*/
-      _regenerator["default"].mark(function _callee2() {
+      _regenerator.default.mark(function _callee2() {
         var renderPage, _ref3, html, head, dataOnly, styles;
 
-        return _regenerator["default"].wrap(function _callee2$(_context2) {
+        return _regenerator.default.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
@@ -799,7 +799,7 @@ function (_react$Component) {
                 html = _ref3.html;
                 head = _ref3.head;
                 dataOnly = _ref3.dataOnly;
-                styles = (0, _server["default"])();
+                styles = (0, _server.default)();
                 return _context2.abrupt("return", {
                   html: html,
                   head: head,
@@ -819,10 +819,10 @@ function (_react$Component) {
   return Document;
 }(_react.Component);
 
-exports["default"] = Document;
+exports.default = Document;
 Document.childContextTypes = {
-  _documentProps: _propTypes["default"].any,
-  _devOnlyInvalidateCacheQueryString: _propTypes["default"].string
+  _documentProps: _propTypes.default.any,
+  _devOnlyInvalidateCacheQueryString: _propTypes.default.string
   /**
   * `getInitialProps` hook returns the context object with the addition of `renderPage`. `
   * `renderPage` callback executes `React` rendering logic synchronously to support server-rendering wrappers
@@ -833,22 +833,22 @@ Document.childContextTypes = {
 var Html =
 /*#__PURE__*/
 function (_react$Component2) {
-  (0, _inherits2["default"])(Html, _react$Component2);
+  (0, _inherits2.default)(Html, _react$Component2);
 
   function Html() {
     var _this2;
 
-    (0, _classCallCheck2["default"])(this, Html);
-    _this2 = (0, _possibleConstructorReturn2["default"])(this, (0, _getPrototypeOf2["default"])(Html).apply(this, arguments));
+    (0, _classCallCheck2.default)(this, Html);
+    _this2 = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(Html).apply(this, arguments));
     _this2.context = void 0;
     return _this2;
   }
 
-  (0, _createClass2["default"])(Html, [{
+  (0, _createClass2.default)(Html, [{
     key: "render",
     value: function render() {
       var inAmpMode = this.context._documentProps.inAmpMode;
-      return _react["default"].createElement("html", (0, _extends2["default"])({}, this.props, {
+      return _react.default.createElement("html", (0, _extends2.default)({}, this.props, {
         amp: inAmpMode ? '' : undefined
       }));
     }
@@ -858,27 +858,27 @@ function (_react$Component2) {
 
 exports.Html = Html;
 Html.contextTypes = {
-  _documentProps: _propTypes["default"].any
+  _documentProps: _propTypes.default.any
 };
 Html.propTypes = {
-  children: _propTypes["default"].node.isRequired
+  children: _propTypes.default.node.isRequired
 };
 
 var Head =
 /*#__PURE__*/
 function (_react$Component3) {
-  (0, _inherits2["default"])(Head, _react$Component3);
+  (0, _inherits2.default)(Head, _react$Component3);
 
   function Head() {
     var _this3;
 
-    (0, _classCallCheck2["default"])(this, Head);
-    _this3 = (0, _possibleConstructorReturn2["default"])(this, (0, _getPrototypeOf2["default"])(Head).apply(this, arguments));
+    (0, _classCallCheck2.default)(this, Head);
+    _this3 = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(Head).apply(this, arguments));
     _this3.context = void 0;
     return _this3;
   }
 
-  (0, _createClass2["default"])(Head, [{
+  (0, _createClass2.default)(Head, [{
     key: "getCssLinks",
     value: function getCssLinks() {
       var _this4 = this;
@@ -897,7 +897,7 @@ function (_react$Component3) {
           return null;
         }
 
-        return _react["default"].createElement("link", {
+        return _react.default.createElement("link", {
           key: file,
           nonce: _this4.props.nonce,
           rel: "stylesheet",
@@ -916,7 +916,7 @@ function (_react$Component3) {
           assetPrefix = _this$context$_docume2.assetPrefix;
       var _devOnlyInvalidateCacheQueryString = this.context._devOnlyInvalidateCacheQueryString;
       return dedupe(dynamicImports).map(function (bundle) {
-        return _react["default"].createElement("link", {
+        return _react.default.createElement("link", {
           rel: "preload",
           key: bundle.file,
           href: assetPrefix + "/_next/" + bundle.file + _devOnlyInvalidateCacheQueryString,
@@ -946,7 +946,7 @@ function (_react$Component3) {
           return null;
         }
 
-        return _react["default"].createElement("link", {
+        return _react.default.createElement("link", {
           key: file,
           nonce: _this6.props.nonce,
           rel: "preload",
@@ -976,7 +976,7 @@ function (_react$Component3) {
       var children = this.props.children; // show a warning if Head contains <title> (only in development)
 
       if (true) {
-        children = _react["default"].Children.map(children, function (child) {
+        children = _react.default.Children.map(children, function (child) {
           var isReactHelmet = child && child.props && child.props['data-react-helmet'];
 
           if (child && child.type === 'title' && !isReactHelmet) {
@@ -989,7 +989,7 @@ function (_react$Component3) {
       } // show warning and remove conflicting amp head tags
 
 
-      head = !inAmpMode ? head : _react["default"].Children.map(head || [], function (child) {
+      head = !inAmpMode ? head : _react.default.Children.map(head || [], function (child) {
         if (!child) return child;
         var type = child.type,
             props = child.props;
@@ -1006,7 +1006,7 @@ function (_react$Component3) {
           // a type of text/javascript
           if (props.src && props.src.indexOf('ampproject') < -1 || props.dangerouslySetInnerHTML && (!props.type || props.type === 'text/javascript')) {
             badProp = '<script';
-            (0, _keys["default"])(props).forEach(function (prop) {
+            (0, _keys.default)(props).forEach(function (prop) {
               badProp += " " + prop + "=\"" + props[prop] + "\"";
             });
             badProp += '/>';
@@ -1021,18 +1021,18 @@ function (_react$Component3) {
         return child;
       }); // try to parse styles from fragment for backwards compat
 
-      var curStyles = (0, _isArray["default"])(styles) ? styles : [];
+      var curStyles = (0, _isArray.default)(styles) ? styles : [];
 
       if (inAmpMode && styles && // @ts-ignore Property 'props' does not exist on type ReactElement
       styles.props && // @ts-ignore Property 'props' does not exist on type ReactElement
-      (0, _isArray["default"])(styles.props.children)) {
+      (0, _isArray.default)(styles.props.children)) {
         var hasStyles = function hasStyles(el) {
           return el && el.props && el.props.dangerouslySetInnerHTML && el.props.dangerouslySetInnerHTML.__html;
         }; // @ts-ignore Property 'props' does not exist on type ReactElement
 
 
         styles.props.children.map(function (child) {
-          if ((0, _isArray["default"])(child)) {
+          if ((0, _isArray.default)(child)) {
             child.map(function (el) {
               return hasStyles(el) && curStyles.push(el);
             });
@@ -1042,46 +1042,46 @@ function (_react$Component3) {
         });
       }
 
-      return _react["default"].createElement("head", this.props, children, head, inAmpMode && _react["default"].createElement(_react["default"].Fragment, null, _react["default"].createElement("meta", {
+      return _react.default.createElement("head", this.props, children, head, inAmpMode && _react.default.createElement(_react.default.Fragment, null, _react.default.createElement("meta", {
         name: "viewport",
         content: "width=device-width,minimum-scale=1,initial-scale=1"
-      }), _react["default"].createElement("link", {
+      }), _react.default.createElement("link", {
         rel: "canonical",
         href: canonicalBase + (0, _utils.cleanAmpPath)(dangerousAsPath)
-      }), _react["default"].createElement("link", {
+      }), _react.default.createElement("link", {
         rel: "preload",
         as: "script",
         href: "https://cdn.ampproject.org/v0.js"
-      }), styles && _react["default"].createElement("style", {
+      }), styles && _react.default.createElement("style", {
         "amp-custom": "",
         dangerouslySetInnerHTML: {
           __html: curStyles.map(function (style) {
             return style.props.dangerouslySetInnerHTML.__html;
           }).join('').replace(/\/\*# sourceMappingURL=.*\*\//g, '').replace(/\/\*@ sourceURL=.*?\*\//g, '')
         }
-      }), _react["default"].createElement("style", {
+      }), _react.default.createElement("style", {
         "amp-boilerplate": "",
         dangerouslySetInnerHTML: {
           __html: "body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}"
         }
-      }), _react["default"].createElement("noscript", null, _react["default"].createElement("style", {
+      }), _react.default.createElement("noscript", null, _react.default.createElement("style", {
         "amp-boilerplate": "",
         dangerouslySetInnerHTML: {
           __html: "body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}"
         }
-      })), _react["default"].createElement("script", {
+      })), _react.default.createElement("script", {
         async: true,
         src: "https://cdn.ampproject.org/v0.js"
-      })), !inAmpMode && _react["default"].createElement(_react["default"].Fragment, null, hybridAmp && _react["default"].createElement("link", {
+      })), !inAmpMode && _react.default.createElement(_react.default.Fragment, null, hybridAmp && _react.default.createElement("link", {
         rel: "amphtml",
         href: canonicalBase + getAmpPath(ampPath, dangerousAsPath)
-      }), page !== '/_error' && _react["default"].createElement("link", {
+      }), page !== '/_error' && _react.default.createElement("link", {
         rel: "preload",
         href: assetPrefix + (dynamicBuildId ? "/_next/static/client/pages" + getPageFile(page, buildId) : "/_next/static/" + buildId + "/pages" + getPageFile(page)) + _devOnlyInvalidateCacheQueryString,
         as: "script",
         nonce: this.props.nonce,
         crossOrigin: this.props.crossOrigin || undefined
-      }), _react["default"].createElement("link", {
+      }), _react.default.createElement("link", {
         rel: "preload",
         href: assetPrefix + (dynamicBuildId ? "/_next/static/client/pages/_app." + buildId + ".js" : "/_next/static/" + buildId + "/pages/_app.js") + _devOnlyInvalidateCacheQueryString,
         as: "script",
@@ -1095,36 +1095,36 @@ function (_react$Component3) {
 
 exports.Head = Head;
 Head.contextTypes = {
-  _documentProps: _propTypes["default"].any,
-  _devOnlyInvalidateCacheQueryString: _propTypes["default"].string
+  _documentProps: _propTypes.default.any,
+  _devOnlyInvalidateCacheQueryString: _propTypes.default.string
 };
 Head.propTypes = {
-  nonce: _propTypes["default"].string,
-  crossOrigin: _propTypes["default"].string
+  nonce: _propTypes.default.string,
+  crossOrigin: _propTypes.default.string
 };
 
 var Main =
 /*#__PURE__*/
 function (_react$Component4) {
-  (0, _inherits2["default"])(Main, _react$Component4);
+  (0, _inherits2.default)(Main, _react$Component4);
 
   function Main() {
     var _this7;
 
-    (0, _classCallCheck2["default"])(this, Main);
-    _this7 = (0, _possibleConstructorReturn2["default"])(this, (0, _getPrototypeOf2["default"])(Main).apply(this, arguments));
+    (0, _classCallCheck2.default)(this, Main);
+    _this7 = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(Main).apply(this, arguments));
     _this7.context = void 0;
     return _this7;
   }
 
-  (0, _createClass2["default"])(Main, [{
+  (0, _createClass2.default)(Main, [{
     key: "render",
     value: function render() {
       var _this$context$_docume5 = this.context._documentProps,
           inAmpMode = _this$context$_docume5.inAmpMode,
           html = _this$context$_docume5.html;
       if (inAmpMode) return '__NEXT_AMP_RENDER_TARGET__';
-      return _react["default"].createElement("div", {
+      return _react.default.createElement("div", {
         id: "__next",
         dangerouslySetInnerHTML: {
           __html: html
@@ -1137,25 +1137,25 @@ function (_react$Component4) {
 
 exports.Main = Main;
 Main.contextTypes = {
-  _documentProps: _propTypes["default"].any,
-  _devOnlyInvalidateCacheQueryString: _propTypes["default"].string
+  _documentProps: _propTypes.default.any,
+  _devOnlyInvalidateCacheQueryString: _propTypes.default.string
 };
 
 var NextScript =
 /*#__PURE__*/
 function (_react$Component5) {
-  (0, _inherits2["default"])(NextScript, _react$Component5);
+  (0, _inherits2.default)(NextScript, _react$Component5);
 
   function NextScript() {
     var _this8;
 
-    (0, _classCallCheck2["default"])(this, NextScript);
-    _this8 = (0, _possibleConstructorReturn2["default"])(this, (0, _getPrototypeOf2["default"])(NextScript).apply(this, arguments));
+    (0, _classCallCheck2.default)(this, NextScript);
+    _this8 = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(NextScript).apply(this, arguments));
     _this8.context = void 0;
     return _this8;
   }
 
-  (0, _createClass2["default"])(NextScript, [{
+  (0, _createClass2.default)(NextScript, [{
     key: "getDynamicChunks",
     value: function getDynamicChunks() {
       var _this9 = this;
@@ -1165,7 +1165,7 @@ function (_react$Component5) {
           assetPrefix = _this$context$_docume6.assetPrefix;
       var _devOnlyInvalidateCacheQueryString = this.context._devOnlyInvalidateCacheQueryString;
       return dedupe(dynamicImports).map(function (bundle) {
-        return _react["default"].createElement("script", {
+        return _react.default.createElement("script", {
           async: true,
           key: bundle.file,
           src: assetPrefix + "/_next/" + bundle.file + _devOnlyInvalidateCacheQueryString,
@@ -1194,7 +1194,7 @@ function (_react$Component5) {
           return null;
         }
 
-        return _react["default"].createElement("script", {
+        return _react.default.createElement("script", {
           key: file,
           src: assetPrefix + "/_next/" + file + _devOnlyInvalidateCacheQueryString,
           nonce: _this10.props.nonce,
@@ -1220,7 +1220,7 @@ function (_react$Component5) {
         if (false) {}
 
         var _devFiles = [_constants.CLIENT_STATIC_FILES_RUNTIME_AMP, _constants.CLIENT_STATIC_FILES_RUNTIME_WEBPACK];
-        return _react["default"].createElement(_react["default"].Fragment, null, staticMarkup ? null : _react["default"].createElement("script", {
+        return _react.default.createElement(_react.default.Fragment, null, staticMarkup ? null : _react.default.createElement("script", {
           id: "__NEXT_DATA__",
           type: "application/json",
           nonce: this.props.nonce,
@@ -1230,7 +1230,7 @@ function (_react$Component5) {
           },
           "data-amp-development-mode-only": true
         }), _devFiles ? _devFiles.map(function (file) {
-          return _react["default"].createElement("script", {
+          return _react.default.createElement("script", {
             key: file,
             src: assetPrefix + "/_next/" + file + _devOnlyInvalidateCacheQueryString,
             nonce: _this11.props.nonce,
@@ -1248,14 +1248,14 @@ function (_react$Component5) {
         if (this.props.crossOrigin) console.warn('Warning: `NextScript` attribute `crossOrigin` is deprecated. https://err.sh/next.js/doc-crossorigin-deprecated');
       }
 
-      return _react["default"].createElement(_react["default"].Fragment, null, devFiles ? devFiles.map(function (file) {
-        return !file.match(/\.js\.map/) && _react["default"].createElement("script", {
+      return _react.default.createElement(_react.default.Fragment, null, devFiles ? devFiles.map(function (file) {
+        return !file.match(/\.js\.map/) && _react.default.createElement("script", {
           key: file,
           src: assetPrefix + "/_next/" + file + _devOnlyInvalidateCacheQueryString,
           nonce: _this11.props.nonce,
           crossOrigin: _this11.props.crossOrigin || undefined
         });
-      }) : null, staticMarkup ? null : _react["default"].createElement("script", {
+      }) : null, staticMarkup ? null : _react.default.createElement("script", {
         id: "__NEXT_DATA__",
         type: "application/json",
         nonce: this.props.nonce,
@@ -1263,13 +1263,13 @@ function (_react$Component5) {
         dangerouslySetInnerHTML: {
           __html: NextScript.getInlineScriptSource(this.context._documentProps)
         }
-      }), page !== '/_error' && _react["default"].createElement("script", {
+      }), page !== '/_error' && _react.default.createElement("script", {
         async: true,
         id: "__NEXT_PAGE__" + page,
         src: assetPrefix + (dynamicBuildId ? "/_next/static/client/pages" + getPageFile(page, buildId) : "/_next/static/" + buildId + "/pages" + getPageFile(page)) + _devOnlyInvalidateCacheQueryString,
         nonce: this.props.nonce,
         crossOrigin: this.props.crossOrigin || undefined
-      }), _react["default"].createElement("script", {
+      }), _react.default.createElement("script", {
         async: true,
         id: "__NEXT_PAGE__/_app",
         src: assetPrefix + (dynamicBuildId ? "/_next/static/client/pages/_app." + buildId + ".js" : "/_next/static/" + buildId + "/pages/_app.js") + _devOnlyInvalidateCacheQueryString,
@@ -1283,7 +1283,7 @@ function (_react$Component5) {
       var __NEXT_DATA__ = documentProps.__NEXT_DATA__;
 
       try {
-        var data = (0, _stringify["default"])(__NEXT_DATA__);
+        var data = (0, _stringify.default)(__NEXT_DATA__);
         return (0, _htmlescape.htmlEscapeJsonString)(data);
       } catch (err) {
         if (err.message.indexOf('circular structure')) {
@@ -1299,12 +1299,12 @@ function (_react$Component5) {
 
 exports.NextScript = NextScript;
 NextScript.contextTypes = {
-  _documentProps: _propTypes["default"].any,
-  _devOnlyInvalidateCacheQueryString: _propTypes["default"].string
+  _documentProps: _propTypes.default.any,
+  _devOnlyInvalidateCacheQueryString: _propTypes.default.string
 };
 NextScript.propTypes = {
-  nonce: _propTypes["default"].string,
-  crossOrigin: _propTypes["default"].string
+  nonce: _propTypes.default.string,
+  crossOrigin: _propTypes.default.string
 };
 
 function getAmpPath(ampPath, asPath) {

@@ -412,7 +412,7 @@ var _inherits2 = _interopRequireDefault2(__webpack_require__(/*! @babel/runtime-
 var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "./node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
 
 exports.__esModule = true;
-exports["default"] = void 0;
+exports.default = void 0;
 
 var _react = _interopRequireDefault(__webpack_require__(/*! react */ "react"));
 
@@ -431,29 +431,29 @@ var statusCodes = {
 var Error =
 /*#__PURE__*/
 function (_react$default$Compon) {
-  (0, _inherits2["default"])(Error, _react$default$Compon);
+  (0, _inherits2.default)(Error, _react$default$Compon);
 
   function Error() {
-    (0, _classCallCheck2["default"])(this, Error);
-    return (0, _possibleConstructorReturn2["default"])(this, (0, _getPrototypeOf2["default"])(Error).apply(this, arguments));
+    (0, _classCallCheck2.default)(this, Error);
+    return (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(Error).apply(this, arguments));
   }
 
-  (0, _createClass2["default"])(Error, [{
+  (0, _createClass2.default)(Error, [{
     key: "render",
     value: function render() {
       var statusCode = this.props.statusCode;
       var title = this.props.title || statusCodes[statusCode] || 'An unexpected error has occurred';
-      return _react["default"].createElement("div", {
+      return _react.default.createElement("div", {
         style: styles.error
-      }, _react["default"].createElement(_head["default"], null, _react["default"].createElement("title", null, statusCode, ": ", title)), _react["default"].createElement("div", null, _react["default"].createElement("style", {
+      }, _react.default.createElement(_head.default, null, _react.default.createElement("title", null, statusCode, ": ", title)), _react.default.createElement("div", null, _react.default.createElement("style", {
         dangerouslySetInnerHTML: {
           __html: 'body { margin: 0 }'
         }
-      }), statusCode ? _react["default"].createElement("h1", {
+      }), statusCode ? _react.default.createElement("h1", {
         style: styles.h1
-      }, statusCode) : null, _react["default"].createElement("div", {
+      }, statusCode) : null, _react.default.createElement("div", {
         style: styles.desc
-      }, _react["default"].createElement("h2", {
+      }, _react.default.createElement("h2", {
         style: styles.h2
       }, title, "."))));
     }
@@ -469,9 +469,9 @@ function (_react$default$Compon) {
     }
   }]);
   return Error;
-}(_react["default"].Component);
+}(_react.default.Component);
 
-exports["default"] = Error;
+exports.default = Error;
 Error.displayName = 'ErrorPage';
 var styles = {
   error: {

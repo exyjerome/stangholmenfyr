@@ -1,6 +1,7 @@
 import React from 'react'
 import '../styles/index.scss';
 import Head from 'next/head';
+import Div100vh from 'react-div-100vh';
 
 export default class Index extends React.Component {
     constructor(props)
@@ -24,7 +25,7 @@ export default class Index extends React.Component {
                 <Head>
                     <script src="https://kit.fontawesome.com/321d8fb745.js"></script>
                 </Head>
-                <div className="main">
+                <Div100vh className="main">
                     <h1 className="main__title">Stangholmen Fyr</h1>
                     <div className={'main__nav ' + (this.state.nav ? 'is-active' : '')}>
                         <a className="nav-toggle" onClick={this.toggleNav}>
@@ -37,7 +38,7 @@ export default class Index extends React.Component {
                         <a href="/" className="main__nav-item hvr-shutter-out-horizontal">Kontakt oss</a>
                         <a href="/" className="main__nav-item hvr-shutter-out-horizontal">Online Bestilling Risør Hotel</a>
                     </div>
-                </div>
+                </Div100vh>
                 <div className="display separator-top">
                     <div className="left-half has-image">
                         <img src="/static/island_concert.jpg" />
