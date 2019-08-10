@@ -11,7 +11,11 @@
         padding: 6em;
         line-height: 2;
         flex-direction: column;
-        justify-content: center
+        justify-content: center;
+
+        @include md {
+            padding: 2em;
+        }
     }
 
     .left-half,
@@ -36,6 +40,18 @@
 
         @include md {
             padding: 2em;
+        }
+    }
+
+    @include md {
+        &:nth-child(odd) {
+            flex-direction: column-reverse;
+        }
+    }
+
+    @media only screen and (max-width: 1024px) {
+        &:nth-child(odd) {
+            flex-direction: column-reverse;
         }
     }
 
